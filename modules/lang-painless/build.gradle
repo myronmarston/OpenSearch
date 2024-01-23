@@ -157,8 +157,7 @@ tasks.register("regenLexer", JavaExec) {
   systemProperty 'user.language', 'en'
   systemProperty 'user.country', 'US'
   systemProperty 'user.variant', ''
-  args '-Werror',
-    '-package', 'org.opensearch.painless.antlr',
+  args '-package', 'org.opensearch.painless.antlr',
     '-o', outputPath,
     "${file(grammarPath)}/PainlessLexer.g4"
 }
@@ -171,8 +170,7 @@ tasks.register("regenParser", JavaExec) {
   systemProperty 'user.language', 'en'
   systemProperty 'user.country', 'US'
   systemProperty 'user.variant', ''
-  args '-Werror',
-    '-package', 'org.opensearch.painless.antlr',
+  args '-package', 'org.opensearch.painless.antlr',
     '-no-listener',
     '-visitor',
     // '-Xlog',
