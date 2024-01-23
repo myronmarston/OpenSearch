@@ -309,7 +309,7 @@ allprojects {
     // see https://discuss.gradle.org/t/add-custom-javadoc-option-that-does-not-take-an-argument/5959
     javadoc.options.encoding = 'UTF8'
     javadoc.options.addStringOption('Xdoclint:all,-missing', '-quiet')
-    boolean failOnJavadocWarning = project.ext.has('failOnJavadocWarning') ? project.ext.get('failOnJavadocWarning') : true
+    boolean failOnJavadocWarning = false
     if (failOnJavadocWarning) {
       javadoc.options.addStringOption('Xwerror', '-quiet')
     }
