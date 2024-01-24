@@ -423,9 +423,9 @@ public class OpenSearchException extends RuntimeException implements Writeable, 
             builder.endObject();
         }
 
-        if (params.paramAsBoolean(REST_EXCEPTION_SKIP_STACK_TRACE, REST_EXCEPTION_SKIP_STACK_TRACE_DEFAULT) == false) {
+        //if (params.paramAsBoolean(REST_EXCEPTION_SKIP_STACK_TRACE, REST_EXCEPTION_SKIP_STACK_TRACE_DEFAULT) == false) {
             builder.field(STACK_TRACE, ExceptionsHelper.stackTrace(throwable));
-        }
+        //}
 
         Throwable[] allSuppressed = throwable.getSuppressed();
         if (allSuppressed.length > 0) {

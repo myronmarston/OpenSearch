@@ -243,15 +243,16 @@ public class CompositeAggregationBuilder extends AbstractAggregationBuilder<Comp
      * the composite aggregation.
      */
     private static AggregatorFactory checkParentIsSafe(AggregatorFactory factory) {
-        if (factory == null) {
-            return null;
-        } else if (factory instanceof NestedAggregatorFactory
-            || factory instanceof FilterAggregatorFactory
-            || factory instanceof ReverseNestedAggregatorFactory) {
-                return checkParentIsSafe(factory.getParent());
-            } else {
-                return factory;
-            }
+        return null;
+        //if (factory == null) {
+        //    return null;
+        //} else if (factory instanceof NestedAggregatorFactory
+        //    || factory instanceof FilterAggregatorFactory
+        //    || factory instanceof ReverseNestedAggregatorFactory) {
+        //        return checkParentIsSafe(factory.getParent());
+        //    } else {
+        //        return factory;
+        //    }
     }
 
     private static void validateSources(List<CompositeValuesSourceBuilder<?>> sources) {

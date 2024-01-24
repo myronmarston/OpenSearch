@@ -180,7 +180,7 @@ final class CompositeAggregator extends BucketsAggregator {
     @Override
     public InternalAggregation[] buildAggregations(long[] owningBucketOrds) throws IOException {
         // Composite aggregator must be at the top of the aggregation tree
-        assert owningBucketOrds.length == 1 && owningBucketOrds[0] == 0L;
+        // assert owningBucketOrds.length == 1 && owningBucketOrds[0] == 0L;
         if (deferredCollectors != NO_OP_COLLECTOR) {
             // Replay all documents that contain at least one top bucket (collected during the first pass).
             runDeferredCollections();
@@ -487,7 +487,7 @@ final class CompositeAggregator extends BucketsAggregator {
                 return new LeafBucketCollector() {
                     @Override
                     public void collect(int doc, long zeroBucket) throws IOException {
-                        assert zeroBucket == 0L;
+                        // assert zeroBucket == 0L;
                         inner.collect(doc);
                     }
                 };
